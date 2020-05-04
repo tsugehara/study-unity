@@ -7,6 +7,8 @@ public class BoxInit : MonoBehaviour
 	public GameObject boxObjPrefab;
 	public GameObject boxesObj;
 
+	public GameObject firePrefab;
+
 	private void Awake()
 	{
 		for (int x = 0; x < 8; x++)
@@ -17,6 +19,7 @@ public class BoxInit : MonoBehaviour
 				GameObject g = Instantiate(boxObjPrefab, boxesObj.transform);
 				g.transform.position = new Vector3((2f + (1f * y)), 0.4f, (-4.2f + (1.2f * x)));
 				g.GetComponent<Destroyer>().masterObj = masterObj;
+				g.GetComponent<Destroyer>().firePrefab = firePrefab;
 			}
 		}
 	}
